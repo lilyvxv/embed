@@ -16,8 +16,7 @@
 > Embed is a user bot, and user bots are against Discord's terms of service. Use at your own risk.
 
 #### : Prerequisites
-- [Node.js](https://nodejs.org) v16 or higher
-- [npm](https://npmjs.com) v7 or higher
+- Recent versions of [Node.js](https://nodejs.org) & [npm](https://npmjs.com)
 - Your Discord token
 
 #### : Manual Installation
