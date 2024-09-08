@@ -12,7 +12,7 @@
 - Modular making it easy to add new replacements
 
 ### Installation
-> [!WARNING]
+> [!SEVERE]
 > Embed is a user bot, and user bots are against Discord's terms of service.
 > Use at your own risk.
 
