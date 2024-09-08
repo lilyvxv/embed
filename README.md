@@ -39,7 +39,7 @@ docker build -t embed-user-bot .
 ```
 2. Run the Docker container
 ```sh
-docker run -d --name embed-user-bot embed-user-bot -v /path/to/config.toml:/app/config.toml
+docker run --name embed-user-bot -d --restart=always -v $(pwd)/config.toml:/app/config.toml embed-user-bot
 ```
 
 ### License
