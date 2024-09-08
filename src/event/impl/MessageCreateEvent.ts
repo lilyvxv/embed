@@ -6,6 +6,7 @@ import { IModule } from "../../module/IModule";
 import { TiktokReplacement } from "../../module/impl/TiktokReplacement";
 import { TwitterReplacement } from "../../module/impl/TwitterReplacement";
 import { RedditReplacement } from "../../module/impl/RedditReplacement";
+import {UrlTrackingRemoval} from "../../module/impl/UrlTrackingRemoval";
 
 export const logger: Logger<ILogObj> = new Logger();
 
@@ -17,6 +18,7 @@ export class MessageCreateEvent implements IEvent {
     new TiktokReplacement(this.client),
     new TwitterReplacement(this.client),
     new RedditReplacement(this.client),
+    new UrlTrackingRemoval(this.client)
   ];
 
   constructor(private client: ExtendedClient) {}
@@ -39,13 +41,20 @@ export class MessageCreateEvent implements IEvent {
     }
 
     // Process the message with the modules
+    let startContent = message.content;
     for (const module of this.modules) {
       if (module.regex.test(message.content)) {
         logger.debug("Handling %s with module %s", message.content, module.name);
 
         // Process the message with the module
-        await module.handle(message);
+        message.content = await module.handle(message);
       }
+    }
+
+    // Update the message content if it has changed
+    if (startContent !== message.content) {
+      logger.debug("Updating message content from %s to %s", startContent, message.content);
+      await message.edit(message.content);
     }
   }
 }
