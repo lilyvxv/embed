@@ -1,0 +1,8 @@
+node_modules
+.git
+.idea
+Dockerfile
+.dockerignore
+pnpm-lock.yaml
+config.toml
+config-example.toml

@@ -1,0 +1,26 @@
+{
+  "name": "embed",
+  "version": "1.0.0",
+  "description": "A lightweight and stable Discord user-bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx tsx src/index.ts",
+    "format": "npx prettier --write ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "@iarna/toml": "^2.2.5",
+    "discord.js-selfbot-v13": "^3.3.0",
+    "dotenv": "^16.4.5",
+    "toml": "^3.0.0",
+    "tslog": "^4.9.3",
+    "tsx": "^4.19.0",
+    "typescript": "^5.5.4"
+  }
+}

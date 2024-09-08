@@ -1,0 +1,14 @@
+token = "your_token_here"
+ignorePrefix = "!!"
+
+[twitter]
+download = false
+embed_provider = "https:/fxtwitter.com"
+
+[reddit]
+download = false
+embed_provider = "https://rxddit.com"
+
+[tiktok]
+download = false
+embed_provider = "https://tnktok.com"
