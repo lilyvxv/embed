@@ -27,21 +27,20 @@ export class MessageCreateEvent implements IEvent {
       return;
     }
 
+    // Using prefix as a blacklist for modules
+    if (message.content.startsWith(this.client.config!.ignorePrefix)) {
+      logger.debug(
+        "Not handling %s",
+        message.content,
+      );
+      message.content = message.content.slice(2);
+      await message.edit(message.content);
+      return;
+    }
+
     // Process the message with the modules
     for (const module of this.modules) {
       if (module.regex.test(message.content)) {
-        // Using prefix as a blacklist for modules
-        if (message.content.startsWith(this.client.config!.ignorePrefix)) {
-          logger.debug(
-            "Not handling %s with module %s due to prefix",
-            message.content,
-            module.name,
-          );
-          message.content = message.content.slice(2);
-          await message.edit(message.content);
-          return;
-        }
-
         logger.debug("Handling %s with module %s", message.content, module.name);
 
         // Process the message with the module
