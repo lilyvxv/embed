@@ -8,11 +8,13 @@
 
 ### Highlights
 - Stable and lightweight
-- Modular - easy to add new replacements
+- Easy to install and use
+- Modular making it easy to add new replacements
 
 ### Installation
-> [!CAUTION]
-> Embed is a user bot, and user bots are against Discord's terms of service. Use at your own risk.
+> [!WARNING]
+> Embed is a user bot, and user bots are against Discord's terms of service.
+> Use at your own risk.
 
 #### Prerequisites
 - [Node.js](https://nodejs.org) v16 or higher
@@ -20,7 +22,7 @@
 - Your Discord token
 
 #### Manual Installation
-1. Get the latest release from the [releases page](https://github.com/lilyvxv/embed/releases)
+1. Get the latest release from the [Releases Page](https://github.com/lilyvxv/embed/releases)
 2. Extract the zip file
 3. Install dependencies
 ```sh
@@ -39,7 +41,7 @@ docker build -t embed-user-bot .
 ```
 2. Run the Docker container
 ```sh
-docker run -d --name embed-user-bot -v /path/to/config.toml:/app/config.toml embed-user-bot
+docker run -d --name embed-user-bot embed-user-bot -v /path/to/config.toml:/app/config.toml
 ```
 
 ### License
