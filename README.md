@@ -16,12 +16,12 @@
 > Embed is a user bot, and user bots are against Discord's terms of service.
 > Use at your own risk.
 
-#### Prerequisites
+#### - Prerequisites
 - [Node.js](https://nodejs.org) v16 or higher
 - [npm](https://npmjs.com) v7 or higher
 - Your Discord token
 
-#### Manual Installation
+#### - Manual Installation
 1. Get the latest release from the [Releases Page](https://github.com/lilyvxv/embed/releases)
 2. Extract the zip file
 3. Install dependencies
@@ -34,7 +34,7 @@ npm install
 npm start
 ```
 
-#### Docker Installation
+#### - Docker Installation
 1. Build the Docker image
 ```sh
 docker build -t embed-user-bot .
