@@ -13,8 +13,7 @@
 
 ### Installation
 > [!CAUTION]
-> Embed is a user bot, and user bots are against<br>
-> Discord's terms of service. Use at your own risk.
+> Embed is a user bot, and user bots are against Discord's terms of service. Use at your own risk.
 
 #### : Prerequisites
 - [Node.js](https://nodejs.org) v16 or higher
