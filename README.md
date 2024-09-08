@@ -13,7 +13,7 @@
 
 ### Installation
 > [!CAUTION]
-> Embed is a user bot, and user bots are against Discord's terms of service.
+> Embed is a user bot, and user bots are against Discord's terms of service.<br>
 > Use at your own risk.
 
 #### : Prerequisites
