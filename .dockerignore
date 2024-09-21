@@ -6,3 +6,4 @@ Dockerfile
 pnpm-lock.yaml
 config.toml
 config-example.toml
+embed.zip

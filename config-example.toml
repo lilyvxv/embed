@@ -3,12 +3,12 @@ ignorePrefix = "!!"
 
 [twitter]
 download = false
-embed_provider = "https:/fxtwitter.com"
+embed_provider = "fxtwitter.com"
 
 [reddit]
 download = false
-embed_provider = "https://rxddit.com"
+embed_provider = "rxddit.com"
 
 [tiktok]
 download = false
-embed_provider = "https://tnktok.com"
+embed_provider = "tnktok.com"

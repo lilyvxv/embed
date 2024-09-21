@@ -26,7 +26,11 @@ export class URLTrackingRemoval implements IModule {
           }
         }
 
-        logger.debug("Removed query parameters: %s -> %s", match, url.toString());
+        logger.debug(
+          "Removed query parameters: %s -> %s",
+          match,
+          url.toString(),
+        );
 
         return url.toString();
       } catch (error) {

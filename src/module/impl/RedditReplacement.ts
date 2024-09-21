@@ -1,7 +1,7 @@
 import ExtendedClient from "../../structure/Client";
-import {IModule} from "../IModule";
-import {Message} from "discord.js-selfbot-v13";
-import {ILogObj, Logger} from "tslog";
+import { IModule } from "../IModule";
+import { Message } from "discord.js-selfbot-v13";
+import { ILogObj, Logger } from "tslog";
 
 export const logger: Logger<ILogObj> = new Logger();
 
