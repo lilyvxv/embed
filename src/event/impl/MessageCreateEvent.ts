@@ -3,10 +3,10 @@ import { IEvent } from "../IEvent";
 import { ClientEvents, Message } from "discord.js-selfbot-v13";
 import { Logger, ILogObj } from "tslog";
 import { IModule } from "../../module/IModule";
-import { TiktokReplacement } from "../../module/impl/TiktokReplacement";
+import { TikTokReplacement } from "../../module/impl/TikTokReplacement";
 import { TwitterReplacement } from "../../module/impl/TwitterReplacement";
 import { RedditReplacement } from "../../module/impl/RedditReplacement";
-import {UrlTrackingRemoval} from "../../module/impl/UrlTrackingRemoval";
+import {URLTrackingRemoval} from "../../module/impl/URLTrackingRemoval";
 
 export const logger: Logger<ILogObj> = new Logger();
 
@@ -15,10 +15,10 @@ export class MessageCreateEvent implements IEvent {
   public once: boolean = false;
 
   private modules: IModule[] = [
-    new TiktokReplacement(this.client),
+    new TikTokReplacement(this.client),
     new TwitterReplacement(this.client),
     new RedditReplacement(this.client),
-    new UrlTrackingRemoval(this.client)
+    new URLTrackingRemoval(this.client)
   ];
 
   constructor(private client: ExtendedClient) {}

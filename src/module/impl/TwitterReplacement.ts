@@ -7,17 +7,18 @@ export const logger: Logger<ILogObj> = new Logger();
 
 export class TwitterReplacement implements IModule {
   public name = "twitter_replacement";
-  public regex =
-    /https:\/\/(?:twitter\.com|x\.com)\/(?:[a-zA-Z0-9_]{1,15}\/status\/|status\/)(\d+)/g;
+  public regex = /(?:https?:\/\/)?(?:twitter\.com|x\.com)\/[\w\-\/?=&]+/g;
 
   constructor(private client: ExtendedClient) {}
 
   async handle(message: Message) {
+    const embedProvider = this.client.config!.twitter.embedProvider;
+
     // Replace the Twitter links with the embed provider
-    return message.content.replace(this.regex, (match, id) => {
-      const replacement = `${this.client.config!.twitter.embedProvider}/status/${id}`;
-      logger.debug("%s -> %s", match, replacement);
-      return replacement;
+    return message.content.replace(this.regex, (match) => {
+      let replaced = match.replace(/twitter\.com|x\.com/, embedProvider);
+      logger.debug("%s -> %s", match, replaced);
+      return replaced;
     });
   }
 }

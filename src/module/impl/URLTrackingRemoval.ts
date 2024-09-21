@@ -6,7 +6,7 @@ import { URL } from "url";
 
 export const logger: Logger<ILogObj> = new Logger();
 
-export class UrlTrackingRemoval implements IModule {
+export class URLTrackingRemoval implements IModule {
   public name = "url_tracking_removal";
   public regex = /https?:\/\/[^\s?]+\?\S+/g;
 
@@ -19,8 +19,13 @@ export class UrlTrackingRemoval implements IModule {
       try {
         const url = new URL(match);
 
-        // Remove all query parameters
-        url.search = '';
+        // Remove specific query parameters
+        for (const key of url.searchParams.keys()) {
+          if (key !== "v") {
+            url.searchParams.delete(key);
+          }
+        }
+
         logger.debug("Removed query parameters: %s -> %s", match, url.toString());
 
         return url.toString();
